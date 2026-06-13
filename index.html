@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30 Years of Craftsmanship | Premium Painting & Wood Polishing</title>
+    <style>
+        /* --- RESET & GLOBAL STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        :root {
+            --primary: #0F172A; /* Deep Navy */
+            --accent: #D97706;  /* Warm Amber */
+            --accent-hover: #B45309;
+            --text-dark: #334155;
+            --text-light: #F8FAFC;
+            --bg-light: #F1F5F9;
+        }
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 0;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+            margin: 15px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* --- HEADER / NAV --- */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: var(--accent);
+        }
+        .phone-nav {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        .hero h1 span {
+            color: var(--accent);
+        }
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            color: #CBD5E1;
+        }
+
+        /* --- BENEFITS / WHY CHOOSE US --- */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .benefit-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 5px solid var(--accent);
+        }
+        .benefit-card h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services {
+            background-color: var(--bg-light);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+        .service-info {
+            padding: 25px;
+        }
+        .service-info h3 {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        /* --- TESTIMONIALS --- */
+        .testimonial-box {
+            background: white;
+            border: 1px solid #E2E8F0;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+        .stars {
+            color: #F59E0B;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .quote {
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+        .author {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        /* --- FOOTER / CTA --- */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        footer h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        footer p {
+            color: #94A3B8;
+            margin-bottom: 30px;
+        }
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            font-size: 0.9rem;
+            color: #64748B;
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.3rem; }
+            .hero p { font-size: 1.1rem; }
+            .section-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">CRAFTSMAN<span>30</span></div>
+            <a href="tel:1234567890" class="phone-nav">📞 (123) 456-7890</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>30 Years of <span>Flawless Finishes</span></h1>
+        <p>Premium House Painting & Wood Polishing. Bringing master craftsmanship, precision, and vibrant life to your home. Trusted locally since 1996.</p>
+        <a href="tel:1234567890" class="btn">Get Your Free Estimate Today</a>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title">Why 30 Years of Experience Matters</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3>Master Wood Polishing</h3>
+                <p>Restoring antiques, luxury doors, and fine cabinets to a factory-smooth, rich gloss or flawless satin finish.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Flawless House Painting</h3>
+                <p>Sharp, crisp lines, immaculate preparation work, clean execution, and premium paints built to endure.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Three Decades of Trust</h3>
+                <p>30 years means we have seen it all, solved it all, and perfected the art. We get it right the first time.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our Specialized Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="service-info">
+                        <h3>Interior & Exterior Painting</h3>
+                        <p>Complete residential transformations. Full protection for your floors, thorough wall prep, and premium coats.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="service-info">
+                        <h3>Luxury Wood Restoration</h3>
+                        <p>Specialized treatments using top-tier polyurethane, lacquer, and hand-rubbed oil finishes for high-end woodwork.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="service-info">
+                        <h3>Cabinet Refinishing</h3>
+                        <p>Don't replace your kitchen or bathroom cabinets. We can update and factory-finish them for a fraction of the price.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title">What Your Neighbors Say</h2>
+        <div class="testimonial-box">
+            <div class="stars">★★★★★</div>
+            <p class="quote">"He completely transformed our 20-year-old faded front door. It looks better than the day we bought the house. An absolute master of his craft, punctual, and left no mess behind!"</p>
+            <p class="author">— Sarah M., Local Homeowner</p>
+        </div>
+    </section>
+
+    <footer>
+        <h2>Ready to Transform Your Home?</h2>
+        <p>Contact us today for a free, zero-obligation on-site consultation.</p>
+        <a href="tel:1234567890" class="btn">Call (123) 456-7890</a>
+        <div class="footer-bottom">
+            &copy; 2026 Craftsman30 Painting & Polishing. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
